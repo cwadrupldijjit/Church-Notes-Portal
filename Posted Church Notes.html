@@ -36,7 +36,7 @@
                         </p>
                     </div>
                     
-                    <h4 class="postSubHead">{{ post.otherThoughts.title }}</h4>
+                    <h4 class="postSubHead" ng-if="post.otherThoughts.publicNotes[0] || post.otherThoughts.publicNotes[0]">{{ post.otherThoughts.title }}</h4>
                     <p ng-repeat="note in post.otherThoughts.publicNotes">
                         {{ note }} 
                     </p>
@@ -45,7 +45,7 @@
                     </p>
                     
                     <p>
-                        {{ post.announcements.title }}
+                        <h4 ng-if="post.announcements.announcements[0]">{{ post.announcements.title }}</h4>
                         <ul>
                             <li ng-repeat="announcement in post.announcements.announcements">
                                 {{ announcement }}
