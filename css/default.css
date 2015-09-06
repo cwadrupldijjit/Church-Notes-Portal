@@ -4,7 +4,7 @@
     background-color: aliceblue;
 }
 
-div#content
+article
 {
     max-width: 920px;
     min-width: 720px;
@@ -16,17 +16,17 @@ div#content
     box-shadow: 5px 5px 10px grey;
 }
 
-fieldset#InputNotesPanel
+#InputNotesPanel
 {
     width: auto;
 }
 
-input#summary:focus
+#summary:focus
 {
     
 }
 
-p#time
+#time
 {
     display: inline-block;
     margin: 0px 0px;
@@ -49,7 +49,7 @@ textarea
     display: inline-block;
 }
 
-div.postContent
+.postContent
 {
     padding: 0px 0px 0px 20px;
 }
@@ -65,7 +65,7 @@ div.postContent
     color: black;
 }
 
-p.otherThoughts
+.private
 {
     font-family: Aurek-Besh;
 }
