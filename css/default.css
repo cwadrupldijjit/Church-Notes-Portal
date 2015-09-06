@@ -1,7 +1,23 @@
 ﻿body
 {
     font-family: Arial;
-    background-color: aliceblue;
+    /*background-color: aliceblue;*/
+}
+
+header {
+    height: 100px;
+    width: 100%;
+    padding: 0 30px;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    background-color: red;
+}
+
+header h1 {
+    margin: 30px 0;
 }
 
 article
@@ -9,11 +25,11 @@ article
     max-width: 920px;
     min-width: 720px;
     
-    margin: 0px auto;
+    margin: 100px auto;
     padding: 10px 40px;
 
     background-color: white;
-    box-shadow: 5px 5px 10px grey;
+    /*box-shadow: 5px 5px 10px grey;*/
 }
 
 #InputNotesPanel
@@ -46,7 +62,7 @@ textarea
 
 .postTitle
 {
-    display: inline-block;
+    display: inline;
 }
 
 .postContent
@@ -58,6 +74,7 @@ textarea
 {
     color: rgba(0, 0, 0, .65);
     transition: all .25s;
+    padding: 20px;
 }
 
 .post:hover

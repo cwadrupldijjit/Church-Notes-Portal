@@ -1,2 +1,2 @@
 /* global angular */
-var app = angular.module('NoteBlogApp', ['ngMaterial']);
+var app = angular.module('NoteBlogApp', [/*'ngMaterial'*/]);

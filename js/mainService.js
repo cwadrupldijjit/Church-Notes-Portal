@@ -2,7 +2,7 @@ app.service('mainService', function($http) {
 	var notes = [
 		{
 			meta: {
-				title: 'Church Notes 8/30/15',
+				title: 'Church Notes',
 				timestamp: '08/30/2015 13:17:00'
 			},
 			

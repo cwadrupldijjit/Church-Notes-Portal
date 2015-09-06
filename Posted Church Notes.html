@@ -8,9 +8,12 @@
         <link rel="stylesheet" type="text/css" href="css/default.css" />
     </head>
     
-    <body>
-        <article>
+    <body ng-controller="MainController as mc">
+        <header>
             <h1>Church Notes Portal</h1>
+        </header>
+        
+        <article>
     
             <md-card class="post">
                 <h3 class="postTitle">Curch Notes 9/6/15</h3> was posted at 9:33am
@@ -21,7 +24,28 @@
                     </p>
                 </div>
             </md-card>
-    
+            
+            <md-card class="post">
+                <h3 class="postTitle">{{ mc.posts[0].meta.title }}</h3> was posted at {{ mc.posts[0].meta.timestamp }}
+                <div class="postContent">
+                    <h4 class="postSubHead">Other Thoughts</h4>
+                    <p>
+                        Repentence refreshes our view of ourselves, of others, and elevates our view to a higher level and helps us to know how God loves us and helps us to love others like God loves us. 
+                    </p>
+                    <p>
+                        Announcements
+                        <ul>
+                            <li>
+                                Institute kickoff is this Wednesday at 6:00pm which will include food and a talk given by Pres Heaton, followed by games
+                            </li>
+                            <li>
+                                FHE this week is at Bro Napp's house in Mapleton at 7:00.  Carpooling is available at the church at 6:30pm.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </md-card>
+            
             <md-card class="post">
                 <h3 class="postTitle">Curch Notes 8/30/15</h3> was posted at 1:17pm
                 <div class="postContent">
@@ -163,6 +187,8 @@
         
         
         <script type="text/javascript" src="js/angular.1.4.min.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-aria/angular-aria.js"></script>
         <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/controllers.js"></script>
