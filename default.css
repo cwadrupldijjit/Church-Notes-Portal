@@ -1,0 +1,71 @@
+﻿body
+{
+    font-family: Arial;
+    background-color: aliceblue;
+}
+
+div#content
+{
+    max-width: 920px;
+    min-width: 720px;
+    
+    margin: 0px auto;
+    padding: 10px 40px;
+
+    background-color: white;
+    box-shadow: 5px 5px 10px grey;
+}
+
+fieldset#InputNotesPanel
+{
+    width: auto;
+}
+
+input#summary:focus
+{
+    
+}
+
+p#time
+{
+    display: inline-block;
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
+textarea
+{
+    min-width: 500px;
+    min-height: 100px;
+}
+
+#submit
+{
+    vertical-align: top;
+}
+
+.postTitle
+{
+    display: inline-block;
+}
+
+div.postContent
+{
+    padding: 0px 0px 0px 20px;
+}
+
+.post
+{
+    color: rgba(0, 0, 0, .65);
+    transition: all .25s;
+}
+
+.post:hover
+{
+    color: black;
+}
+
+p.otherThoughts
+{
+    font-family: Aurek-Besh;
+}
