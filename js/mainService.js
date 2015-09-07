@@ -19,7 +19,9 @@ app.service('mainService', function($http) {
 				speakers: [
 					{
 						name: '',
-						notes: ''
+						notes: [
+							''
+						]
 					}
 				]
 			},
@@ -52,7 +54,10 @@ app.service('mainService', function($http) {
 				speakers: [
 					{
 						name: 'Mr Test',
-						notes: 'Test'
+						notes: [
+							'Test',
+							'rteydfghjklktrewertu'
+						]
 					}
 				]
 			},
