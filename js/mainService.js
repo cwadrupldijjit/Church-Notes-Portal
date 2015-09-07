@@ -33,6 +33,39 @@ app.service('mainService', function($http) {
 					
 				]
 			}
+		},
+		{
+			meta: {
+				title: 'Church Notes',
+				timestamp: '09/06/2015 09:33:00'
+			},
+			
+			announcements: {
+				title: 'Announcements',
+				announcements: [
+					''
+				]
+			},
+			
+			speakers: {
+				title: 'Speakers',
+				speakers: [
+					{
+						name: 'Mr Test',
+						notes: 'Test'
+					}
+				]
+			},
+			
+			otherThoughts: {
+				title: 'Other Thoughts',
+				publicNotes: [
+					''
+				],
+				privateNotes: [
+					''
+				]
+			}
 		}
 	];
 	

@@ -26,7 +26,7 @@
             </md-card>
             
             <md-card class="post" ng-repeat="post in mc.posts">
-                <h3 class="postTitle">{{ post.meta.title }}</h3> was posted at {{ post.meta.timestamp }}
+                <h3 class="postTitle">{{ post.meta.title }}</h3> was posted {{ post.meta.timestamp }}
                 <div class="postContent">
                     <h4 class="postSubHead" ng-if="post.speakers.speakers[0].name">{{ post.speakers.title }}</h4>
                     <div ng-repeat="speaker in post.speakers.speakers">
