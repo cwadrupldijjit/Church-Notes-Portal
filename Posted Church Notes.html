@@ -14,18 +14,8 @@
         </header>
         
         <article>
-    
-            <md-card class="post">
-                <h3 class="postTitle">Curch Notes 9/6/15</h3> was posted at 9:33am
-                <div class="postContent">
-                    <h4 class="postSubHead">Other Thoughts</h4>
-                    <p>
-                        
-                    </p>
-                </div>
-            </md-card>
             
-            <md-card class="post" ng-repeat="post in mc.posts">
+            <md-card class="post" ng-repeat="post in mc.posts | orderBy: -post.meta.timestamp">
                 <h3 class="postTitle">{{ post.meta.title }}</h3> was posted {{ post.meta.timestamp }}
                 <div class="postContent">
                     <h4 class="postSubHead" ng-if="post.speakers.speakers[0].name">{{ post.speakers.title }}</h4>
@@ -51,6 +41,16 @@
                                 {{ announcement }}
                             </li>
                         </ul>
+                    </p>
+                </div>
+            </md-card>
+            
+            <md-card class="post">
+                <h3 class="postTitle">Curch Notes 9/6/15</h3> was posted at 9:33am
+                <div class="postContent">
+                    <h4 class="postSubHead">Other Thoughts</h4>
+                    <p>
+                        
                     </p>
                 </div>
             </md-card>
