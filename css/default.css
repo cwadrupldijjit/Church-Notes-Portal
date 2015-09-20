@@ -39,7 +39,7 @@ article
 
 #summary:focus
 {
-    
+    background-color: green;
 }
 
 #time
@@ -85,4 +85,6 @@ textarea
 .private
 {
     font-family: Aurek-Besh;
+    font-size: 10pt;
+    line-height: 25px;
 }
