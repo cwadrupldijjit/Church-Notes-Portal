@@ -36,9 +36,7 @@ app.service('mainService', function($http) {
 				title: 'Other Thoughts',
 				
 				publicNotes: [
-					'Study and re-read "Beware of Pride" by Ezra Taft Benson found in the April 1989 General Conference.  Print it out.  Read it.  Mark it up.  I may need this talk the most right now.',
-					
-					''
+					'Study and re-read "Beware of Pride" by Ezra Taft Benson found in the April 1989 General Conference.  Print it out.  Read it.  Mark it up.  I may need this talk the most right now.'
 				],
 				
 				
