@@ -1,6 +1,6 @@
 var app = angular.module('NoteBlogApp', ['ngRoute', 'ngMaterial' ]);
 
-app.config(['$routeProvider, $locationProvider', function($routeProvider, $locationProvider) {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'views/posts/post-template.html',
