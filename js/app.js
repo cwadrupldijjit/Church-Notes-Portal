@@ -9,7 +9,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 		})
 		
 		.when('/add-post', {
-			templateUrl: 'views/add-post/add-post.html',
+			templateUrl: 'views/add-post/add-post-template.html',
 			controller: 'AddPostController',
 			controllerAs: 'vm'
 		})
