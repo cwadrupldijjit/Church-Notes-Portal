@@ -1,0 +1,25 @@
+{
+  "name": "church-notes-portal",
+  "version": "0.2.0",
+  "homepage": "https://github.com/cwadrupldijjit/church-notes-portal",
+  "authors": [
+    "Sam Skeen <sskeen@sskeendevelopment.onmicrosoft.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~0.10.1",
+    "angular-route": "~1.4.7"
+  }
+}

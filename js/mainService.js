@@ -1,7 +1,5 @@
 /// <reference path="app.js" />
 /// <reference path="controllers.js" />
-/// <reference path="../bower_components/angular/angular.js" />
-/// <reference path="../bower_components/angular-material/angular-material.js" />
 
 app.service('mainService', function($http) {
 	var notes = [

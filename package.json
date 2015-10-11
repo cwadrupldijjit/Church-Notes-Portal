@@ -1,0 +1,25 @@
+{
+  "name": "church-notes-portal",
+  "version": "1.0.0",
+  "description": "0.2.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwadrupldijjit/church-notes-portal.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwadrupldijjit/church-notes-portal/issues"
+  },
+  "homepage": "https://github.com/cwadrupldijjit/church-notes-portal#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.1.10"
+  }
+}
