@@ -5,11 +5,19 @@
                 <legend>
                     Enter the notes below
                 </legend>
-                Summary:
-                <input type="text" id="summary" /><br />
-                The following note will be saved at: <p id="time" onload="addTime();"></p><br />
-                <textarea placeholder="Put your notes here" id="NoteBlock"></textarea>
-                <input type="submit" id="submit" />
+                <md-input-container>
+                    <label for="vm.newPost.meta.title">
+                        Summary
+                    </label>
+                    <input type="text" ng-model="vm.newPost.meta.title" />
+                </md-input-container>
+                <md-input-container>
+                    <label for="vm.newPost.otherThoughts.publicNotes[0]">
+                        Put your notes here
+                    </label>
+                    <textarea id="NoteBlock"></textarea>
+                </md-input-container>
+                <input type="submit" id="submit" class="md-button md-raised md-primary" />
             </fieldset>
         </form>
     </div>

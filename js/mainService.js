@@ -6,6 +6,48 @@ app.service('mainService', function($http) {
 		{
 			meta: {
 				title: 'Church Notes',
+				timestamp: '08/11/2015 14:30:00'
+			},
+			
+			announcements: {
+				title: 'Announcements',
+				
+				announcements: [
+					'Stake Conference is next week, Saturday meeting at 7:00 at the church, then 10:00 on Sunday morning',
+					'Stake Halloween party Friday, October 23rd, 7:00 at the church, 10:00 Provo Rec Center',
+					'Ward Halloween party Saturday, October 24th, 7:00 at the church?  ZOMBIES (and nerf guns)'
+				]
+			},
+			
+			speakers: {
+				title: 'Speakers',
+				
+				speakers: [
+					{
+						name: 'Brother Napp?',
+						notes: [
+							'We\'re instructed to be especially sure that we attend Stake Conference next week; the blessings we will receive by doing so are found in D&C 44.'
+						]
+					}
+				]
+			},
+			
+			otherThoughts: {
+				title: 'Other Thoughts',
+				
+				publicNotes: [
+					''
+				],
+				
+				privateNotes: [
+					''
+				]
+			}
+		},
+		
+		{
+			meta: {
+				title: 'Church Notes',
 				timestamp: '09/20/2015 12:11:15'
 			},
 			
