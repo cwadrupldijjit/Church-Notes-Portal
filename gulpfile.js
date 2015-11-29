@@ -21,14 +21,23 @@ gulp.task('ts-public', function() {
 });
 
 gulp.task('watch', function() {
+	watch('./server/**/*.ts', function() {
+		gulp.src('./server/**/*.ts')
+			.pipe(ts({
+				noImplicitAny: true,
+				outFile: 'server.js'
+			}))
+			.pipe(gulp.dest('./server'));
+	});
+	
 	watch('./ts/**/*.ts', function() {
-		gulp.src('./ts/**/*.ts')
+		gulp.src('./public/**/*.ts')
 			.pipe(ts({
 				noImplicitAny: true,
 				outFile: 'app.js'
 			}))
-			.pipe(gulp.dest('./js'));
+			.pipe(gulp.dest('./public/js'));
 	});
 });
 
-gulp.task('default', ['ts', 'watch']);
+gulp.task('default', ['ts-server', 'ts-public', 'watch']);

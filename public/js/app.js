@@ -1,3 +1,4 @@
+/* global angular */
 var app = angular.module('NoteBlogApp', ['ngRoute', 'ngMaterial' ]);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
