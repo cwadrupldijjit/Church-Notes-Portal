@@ -1,3 +1,5 @@
+/// <reference path="../config/server-main" />
+
 const Post = mongoose.model(
 	'Post', 
 	new mongoose.Schema({

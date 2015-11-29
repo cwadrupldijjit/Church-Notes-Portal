@@ -1,2 +1,9 @@
-const Post = require('../models/PostModel');
+/// <reference path="../config/server-main" />
 
+// PostController
+
+const PostController = {
+	getPosts() {
+		
+	}
+};
