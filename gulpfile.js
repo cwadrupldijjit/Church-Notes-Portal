@@ -6,7 +6,8 @@ function tsServer() {
 	gulp.src('./server/**/*.ts')
 		.pipe(ts({
 			noImplicitAny: true,
-			outFile: 'server.js'
+			module: 'commonjs',
+			target: 'ES5'
 		}))
 		.pipe(gulp.dest('./server'));
 }
@@ -15,6 +16,7 @@ function tsPublic() {
 	gulp.src('./public/js/**/*.ts')
 		.pipe(ts({
 			noImplicitAny: true,
+			target: 'ES5',
 			outFile: 'app.js'
 		}))
 		.pipe(gulp.dest('./public/js'));

@@ -1,4 +1,6 @@
-/// <reference path="../config/server-main" />
+/// <reference path="../server" />
+
+const mongoose = require('mongoose');
 
 const Post = mongoose.model(
 	'Post', 
@@ -8,7 +10,7 @@ const Post = mongoose.model(
 		announcements: [{
 			type: String
 		}],
-		Speakers: [{
+		speakers: [{
 			name: String,
 			notes: [{ type: String }]
 		}],
@@ -20,3 +22,5 @@ const Post = mongoose.model(
 		}]
 	})
 );
+
+export default Post; 

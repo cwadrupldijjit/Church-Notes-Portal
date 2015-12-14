@@ -18,7 +18,7 @@
 			// Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
 			"runtimeExecutable": null,
 			// Optional arguments passed to the runtime executable.
-			"runtimeArgs": ["--nolazy"],
+			"runtimeArgs": ["--nolazy", "--es_staging", "--harmony"],
 			// Environment variables passed to the program.
 			"env": {
 				"NODE_ENV": "development"
