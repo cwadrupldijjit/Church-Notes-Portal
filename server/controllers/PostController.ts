@@ -6,10 +6,10 @@ const {default: Post} = postDefault;
 const PostController = {
 	getPosts(req: any, res: any) {
 		Post.find({})
-			.exec((err: any, post: any) => {
+			.exec((err: any, posts: any) => {
 				if (err) return res.status(500).send(err);
 				
-				return res.send(post);
+				return res.send(posts);
 			});
 	},
 	

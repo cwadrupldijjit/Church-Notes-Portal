@@ -5,10 +5,10 @@ var Post = postDefault.default;
 var PostController = {
     getPosts: function (req, res) {
         Post.find({})
-            .exec(function (err, post) {
+            .exec(function (err, posts) {
             if (err)
                 return res.status(500).send(err);
-            return res.send(post);
+            return res.send(posts);
         });
     },
     addPost: function (req, res) {
