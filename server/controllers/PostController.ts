@@ -4,11 +4,23 @@
 import * as postDefault from '../models/PostModel';
 const {default: Post} = postDefault;
 const PostController = {
-	getPosts() {
+	getPosts(req: any, res: any) {
 		Post.find({})
-			.exec(() => {
+			.exec((err: any, post: any) => {
+				if (err) return res.status(500).send(err);
 				
+				return res.send(post);
 			});
+	},
+	
+	addPost(req: any, res:any) {
+		let newPost = new Post(req.body);
+		
+		newPost.save((err: any, user: any) => {
+			if (err) return res.status(500).send(err);
+			
+			return res.send(user);
+		})
 	}
 };
 

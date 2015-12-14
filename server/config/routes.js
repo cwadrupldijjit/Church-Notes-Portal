@@ -10,6 +10,7 @@ function routes(app, port) {
     app.use('/views', express.static(pathToPublic + '/views'));
     app.use('/bower_components', express.static(pathToPublic + '/bower_components'));
     app.get('/api/posts', PostController.getPosts);
+    app.post('/api/post', PostController.addPost);
     app.all('/*', function (req, res, next) {
         res.sendFile('index.html', { root: pathToPublic });
     });
