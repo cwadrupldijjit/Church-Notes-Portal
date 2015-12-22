@@ -1,16 +1,17 @@
 <div>
     <div id="content">
         <form>
-            <fieldset id="InputNotesPanel">
+            <fieldset id="InputNotesPanel" layout="column">
                 <legend>
                     Enter the notes below
                 </legend>
                 <md-input-container>
                     <label for="vm.newPost.meta.title">
-                        Summary
+                        Post Title
                     </label>
-                    <input type="text" ng-model="vm.newPost.meta.title" />
+                    <input type="text" ng-model="vm.newPost.postTitle" />
                 </md-input-container>
+                <hr>
                 <md-input-container>
                     <label for="vm.newPost.otherThoughts.publicNotes[0]">
                         Put your notes here

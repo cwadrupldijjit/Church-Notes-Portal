@@ -4,7 +4,7 @@ var PostController = postCtrlDefault.default;
 var express = require('express');
 // Routes
 function routes(app, port) {
-    var pathToPublic = '../../public';
+    var pathToPublic = 'public';
     app.use('/css', express.static(pathToPublic + '/css'));
     app.use('/js', express.static(pathToPublic + '/js'));
     app.use('/views', express.static(pathToPublic + '/views'));

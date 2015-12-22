@@ -4,7 +4,7 @@ const {default: PostController} = postCtrlDefault;
 const express = require('express');
 // Routes
 export function routes(app: any, port: number) {
-	const pathToPublic = '../../public';
+	const pathToPublic = 'public';
 	
 	app.use('/css', express.static(pathToPublic + '/css'));
 	app.use('/js', express.static(pathToPublic + '/js'));
