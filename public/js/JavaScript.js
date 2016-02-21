@@ -1,16 +1,20 @@
 ﻿var tDate = new Date();
-var month = tDate.getMonth();
+var monthNum = tDate.getMonth();
+var month = '';
 var year = tDate.getFullYear();
 var day = tDate.getDate();
-var weekday = tDate.getDay();
+var weekdayNum = tDate.getDay();
+var weekday = '';
 var hours = tDate.getHours();
-var minutes = tDate.getMinutes();
-var seconds = tDate.getSeconds();
+var minutesNum = tDate.getMinutes();
+var minutes = '';
+var secondsNum = tDate.getSeconds();
+var seconds = '';
 var wDAbbr, fullTime, halfDay, todaysDate;
 
 function parseTime()
 {
-    switch (month)
+    switch (monthNum)
     {
         case 0: month = "January"; break;
         case 1: month = "February"; break;
@@ -26,7 +30,7 @@ function parseTime()
         case 11: month = "December"; break;
     }
 
-    switch (weekday)
+    switch (weekdayNum)
     {
         case 0: weekday = "Sunday"; wDAbbr = "Sun"; break;
         case 1: weekday = "Monday"; wDAbbr = "Mon"; break;
@@ -55,7 +59,7 @@ function parseTime()
     else
         halfDay = "am";
 
-    switch (minutes)
+    switch (minutesNum)
     {
         case 0: minutes = "00"; break;
         case 1: minutes = "01"; break;
@@ -69,7 +73,7 @@ function parseTime()
         case 9: minutes = "09"; break;
     }
 
-    switch (seconds)
+    switch (secondsNum)
     {
         case 0: seconds = "00"; break;
         case 1: seconds = "01"; break;
@@ -85,7 +89,7 @@ function parseTime()
 
     fullTime = hours + ":" + minutes + ":" + seconds + " " + halfDay;
 
-    todaysDate = (tDate.getMonth + 1) + "/" + day + "/" + tDate.getYear;
+    todaysDate = (tDate.getUTCMonth() + 1) + "/" + day + "/" + tDate.getYear;
 }
 
 function addTime()

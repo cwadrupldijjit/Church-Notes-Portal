@@ -12,6 +12,13 @@
     
     <body ng-controller="MainController as mc">
         <header>
+			<a href="/" style="text-decoration: none; color: inherit; float: right; position: relative; right: 50px; top: 30px;" class="pull-right">
+				<md-button>Home</md-button>
+			</a>
+			<a href="/add-post" style="text-decoration: none; color: inherit; float: right; position: relative; right: 50px; top: 30px;" class="pull-right">
+				<md-button>New Post</md-button>
+			</a>
+			
             <h1>Church Notes Portal</h1>
         </header>
         
@@ -26,10 +33,6 @@
         <script src="bower_components/angular-aria/angular-aria.js"></script>
         <script src="bower_components/angular-material/angular-material.min.js"></script>
         <script src="js/app.js"></script>
-        <script src="js/controllers.js"></script>
-        <script src="js/mainService.js"></script>
-        <script src="views/posts/posts-controller.js"></script>
-        <script src="views/add-post/add-post-controller.js"></script>
     </body>
 
 </html>

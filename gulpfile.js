@@ -5,7 +5,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var watch = require('gulp-watch');
 
 var pathToServerTs = './server/**/*.ts';
-var pathToPublicTs = './public/js/**/*.ts';
+var pathToPublicTs = ['./public/js/**/*.ts', './public/views/**/*.ts'];
 var pathToSass = ['./public/css/**/*.scss', '.public/views/**/*.scss'];
 
 function tsServer() {
