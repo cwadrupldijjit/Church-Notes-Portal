@@ -1,7 +1,6 @@
 /// <reference path="../server" />
-import * as postCtrlDefault from '../controllers/PostController';
-const {default: PostController} = postCtrlDefault;
-const express = require('express');
+import express = require('express');
+import { PostController } from '../controllers/PostController';
 // Routes
 export function routes(app: any, port: number) {
 	const pathToPublic = 'public';

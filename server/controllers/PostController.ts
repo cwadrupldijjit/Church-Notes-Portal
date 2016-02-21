@@ -1,8 +1,7 @@
 /// <reference path="../server" />
 
 // PostController
-import * as postDefault from '../models/PostModel';
-const {default: Post} = postDefault;
+import { Post } from '../models/PostModel';
 const PostController = {
 	getPosts(req: any, res: any) {
 		Post.find({})
@@ -13,7 +12,7 @@ const PostController = {
 			});
 	},
 	
-	addPost(req: any, res:any) {
+	addPost(req: any, res: any) {
 		let newPost = new Post(req.body);
 		
 		newPost.save((err: any, user: any) => {
@@ -24,4 +23,4 @@ const PostController = {
 	}
 };
 
-export default PostController;
+export { PostController };

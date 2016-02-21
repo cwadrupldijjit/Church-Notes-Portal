@@ -1,7 +1,11 @@
-/// <reference path="../typings/node/node" />
+/// <reference path="../typings/server.d.ts" />
 'use strict';
 //Main Server
-var express = require('express'), cors = require('cors'), bodyParser = require('body-parser'), mongoose = require('mongoose'), mongoURI = 'mongodb://localhost:27017/church-notes-portal', port = 8887;
+var express = require('express');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var mongoURI = 'mongodb://localhost:27017/church-notes-portal', port = 8887;
 var routes_1 = require('./config/routes');
 var app = express();
 app.use(bodyParser.json());
@@ -12,3 +16,5 @@ mongoose.connect(mongoURI);
 mongoose.connection.once('open', function () {
     console.log('Connected to the Mongo DB at ' + mongoURI);
 });
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwrQ0FBK0M7QUFDL0MsWUFBWSxDQUFDO0FBQ2IsYUFBYTtBQUNiLElBQU8sT0FBTyxXQUFXLFNBQVMsQ0FBQyxDQUFBO0FBQ25DLElBQU8sSUFBSSxXQUFXLE1BQU0sQ0FBQyxDQUFDO0FBQzlCLElBQU8sVUFBVSxXQUFXLGFBQWEsQ0FBQyxDQUFDO0FBQzNDLElBQU8sUUFBUSxXQUFXLFVBQVUsQ0FBQyxDQUFDO0FBRXRDLElBQUksUUFBUSxHQUFHLCtDQUErQyxFQUM3RCxJQUFJLEdBQUcsSUFBSSxDQUFDO0FBRWIsdUJBQXFCLGlCQUFpQixDQUFDLENBQUE7QUFFdkMsSUFBSSxHQUFHLEdBQUcsT0FBTyxFQUFFLENBQUM7QUFHcEIsR0FBRyxDQUFDLEdBQUcsQ0FBQyxVQUFVLENBQUMsSUFBSSxFQUFFLENBQUMsQ0FBQztBQUMzQixHQUFHLENBQUMsR0FBRyxDQUFDLElBQUksRUFBRSxDQUFDLENBQUM7QUFFaEIsR0FBRyxDQUFDLEdBQUcsQ0FBQyxPQUFPLENBQUMsTUFBTSxDQUFDLFNBQVMsR0FBRyxTQUFTLENBQUMsQ0FBQyxDQUFDO0FBRS9DLGVBQU0sQ0FBQyxHQUFHLEVBQUUsSUFBSSxDQUFDLENBQUM7QUFFbEIsUUFBUSxDQUFDLE9BQU8sQ0FBQyxRQUFRLENBQUMsQ0FBQztBQUMzQixRQUFRLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxNQUFNLEVBQUU7SUFDaEMsT0FBTyxDQUFDLEdBQUcsQ0FBQywrQkFBK0IsR0FBRyxRQUFRLENBQUMsQ0FBQTtBQUN4RCxDQUFDLENBQUMsQ0FBQyIsImZpbGUiOiJzZXJ2ZXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLy8gPHJlZmVyZW5jZSBwYXRoPVwiLi4vdHlwaW5ncy9zZXJ2ZXIuZC50c1wiIC8+XHJcbid1c2Ugc3RyaWN0JztcclxuLy9NYWluIFNlcnZlclxyXG5pbXBvcnQgZXhwcmVzcyA9IHJlcXVpcmUoJ2V4cHJlc3MnKVxyXG5pbXBvcnQgY29ycyA9IHJlcXVpcmUoJ2NvcnMnKTtcclxuaW1wb3J0IGJvZHlQYXJzZXIgPSByZXF1aXJlKCdib2R5LXBhcnNlcicpO1xyXG5pbXBvcnQgbW9uZ29vc2UgPSByZXF1aXJlKCdtb25nb29zZScpO1xyXG5cclxubGV0IG1vbmdvVVJJID0gJ21vbmdvZGI6Ly9sb2NhbGhvc3Q6MjcwMTcvY2h1cmNoLW5vdGVzLXBvcnRhbCcsXHJcblx0cG9ydCA9IDg4ODc7XHJcblxyXG5pbXBvcnQge3JvdXRlc30gZnJvbSAnLi9jb25maWcvcm91dGVzJztcclxuXHRcclxubGV0IGFwcCA9IGV4cHJlc3MoKTtcclxuXHJcblxyXG5hcHAudXNlKGJvZHlQYXJzZXIuanNvbigpKTtcclxuYXBwLnVzZShjb3JzKCkpO1xyXG5cclxuYXBwLnVzZShleHByZXNzLnN0YXRpYyhfX2Rpcm5hbWUgKyAnL3B1YmxpYycpKTtcclxuXHJcbnJvdXRlcyhhcHAsIHBvcnQpO1xyXG5cclxubW9uZ29vc2UuY29ubmVjdChtb25nb1VSSSk7XHJcbm1vbmdvb3NlLmNvbm5lY3Rpb24ub25jZSgnb3BlbicsIGZ1bmN0aW9uKCkge1xyXG5cdGNvbnNvbGUubG9nKCdDb25uZWN0ZWQgdG8gdGhlIE1vbmdvIERCIGF0ICcgKyBtb25nb1VSSSlcclxufSk7Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9

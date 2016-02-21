@@ -1,6 +1,6 @@
 /// <reference path="../server" />
 
-const mongoose = require('mongoose');
+import mongoose = require('mongoose');
 
 const Post = mongoose.model(
 	'Post', 
@@ -23,4 +23,4 @@ const Post = mongoose.model(
 	})
 );
 
-export default Post; 
+export { Post }; 

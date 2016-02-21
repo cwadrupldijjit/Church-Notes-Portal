@@ -1,11 +1,12 @@
 {
 	"compilerOptions": {
 		"module": "commonjs",
-		"target": "ES5"
+		"target": "es5"
 	},
 	
 	"files": [
 		"./typings/anularjs/angular.d.ts",
-		"./typings/node/node.d.ts"
+		"./typings/node/node.d.ts",
+		"./typings/server.d.ts"
 	]
 }

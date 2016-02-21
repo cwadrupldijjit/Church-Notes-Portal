@@ -1,11 +1,12 @@
-/// <reference path="../typings/node/node" />
+/// <reference path="../typings/server.d.ts" />
 'use strict';
 //Main Server
-let express = require('express'),
-	cors = require('cors'),
-	bodyParser = require('body-parser'),
-	mongoose = require('mongoose'),
-	mongoURI = 'mongodb://localhost:27017/church-notes-portal',
+import express = require('express')
+import cors = require('cors');
+import bodyParser = require('body-parser');
+import mongoose = require('mongoose');
+
+let mongoURI = 'mongodb://localhost:27017/church-notes-portal',
 	port = 8887;
 
 import {routes} from './config/routes';
@@ -15,8 +16,6 @@ let app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-
-app.use(express.static(__dirname + '/public'));
 
 routes(app, port);
 
