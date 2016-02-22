@@ -5,12 +5,13 @@ import mongoose = require('mongoose');
 const Post = mongoose.model(
 	'Post', 
 	new mongoose.Schema({
-		postTitle: String,
+		title: String,
 		timestamp: Date,
 		announcements: [{
 			type: String
 		}],
 		speakers: [{
+			id: Number,
 			name: String,
 			notes: [{ type: String }]
 		}],

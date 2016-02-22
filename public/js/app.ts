@@ -13,11 +13,9 @@
 			.when('/', {
 				template: '<posts></posts>'
 			})
-			
 			.when('/add-post', {
 				template: '<add-post></add-post>',
 			})
-			
 			.otherwise({ redirectTo: '/' });
 		
 		$locationProvider.html5Mode(true);

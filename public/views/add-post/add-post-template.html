@@ -1,25 +1,78 @@
-<div>
-    <div id="content">
-        <form>
-            <fieldset id="InputNotesPanel" layout="column">
-                <legend>
-                    Enter the notes below
-                </legend>
-                <md-input-container>
-                    <label for="vm.newPost.meta.title">
-                        Post Title
-                    </label>
-                    <input type="text" ng-model="vm.newPost.postTitle" />
-                </md-input-container>
-                <hr>
-                <md-input-container>
-                    <label for="vm.newPost.otherThoughts.publicNotes[0]">
-                        Put your notes here
-                    </label>
-                    <textarea id="NoteBlock"></textarea>
-                </md-input-container>
-                <input type="submit" id="submit" class="md-button md-raised md-primary" />
-            </fieldset>
-        </form>
-    </div>
-</div>
+<md-card id="content">
+	<form>
+		<md-input-container>
+			<label for="vm.post.title">
+				Post Title
+			</label>
+			<input type="text" ng-model="vm.post.title" />
+		</md-input-container>
+		
+		<div class="add-note-box">
+			Add: 
+			<md-button class="md-raised md-primary" ng-click="vm.addAnnouncement()">Announcement</md-button>
+			<md-button class="md-raised md-primary" ng-click="vm.addSpeaker()">Speaker</md-button>
+			<md-button class="md-raised md-primary" ng-click="vm.addPublicNote()">Public Note</md-button>
+			<md-button class="md-raised md-primary" ng-click="vm.addPrivateNote()">Private Note</md-button>
+		</div>
+		
+		<div class="public-notes" ng-if="vm.post.announcements.length">
+			<h3>Announcements</h3>
+			
+			<md-input-container ng-repeat="announcement in vm.post.announcements track by $index">
+			<md-button class="md-raised md-warn pull-right" ng-click="vm.cancelAnnouncement(announcement)">x</md-button>
+				<label for="announcement">
+					Announcement #{{$index + 1}}
+				</label>
+				<textarea class="announcements" ng-model="vm.post.announcements[$index]"></textarea>
+			</md-input-container>
+		</div>
+		
+		<div class="public-notes" ng-if="vm.post.speakers.length">
+			<h3>Speakers</h3>
+			
+			<div ng-repeat="speaker in vm.post.speakers track by $index">
+				<md-input-container>
+					<label for="vm.post.speakers[$index].name">Speaker Name</label>
+					<input type="text" ng-model="vm.post.speakers[$index].name">
+				</md-input-container>
+				
+				<md-input-container ng-repeat="note in speaker.notes track by $index">
+					<md-button class="md-raised md-warn pull-right" ng-click="vm.cancelSpeakerNote(speaker, note)">x</md-button>
+					<label for="vm.post.speakers[$parent.$index].notes[$index]">Note #{{$index + 1}}</label>
+					<textarea ng-model="vm.post.speakers[$parent.$index].notes[$index]"></textarea>
+				</md-input-container>
+				
+				<div>
+					<md-button class="md-raised md-primary" ng-click="vm.addSpeakerNote(speaker)">Add Note</md-button>
+					<md-button class="md-raised md-warn pull-right" ng-click="vm.deleteSpeaker(speaker)">x</md-button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="public-notes" ng-if="vm.post.publicNotes.length">
+			<h3>Public Notes</h3>
+			
+			<md-input-container ng-repeat="note in vm.post.publicNotes track by $index">
+				<md-button class="md-raised md-warn pull-right" ng-click="vm.cancelPublicNote(note)">x</md-button>
+				<label for="vm.post.publicNotes[$index]">
+					Note #{{$index + 1}}
+				</label>
+				<textarea class="public-notes" ng-model="vm.post.publicNotes[$index]"></textarea>
+			</md-input-container>
+		</div>
+		
+		<div class="public-notes" ng-if="vm.post.privateNotes.length">
+			<h3>Private Notes</h3>
+			
+			<md-input-container ng-repeat="note in vm.post.privateNotes track by $index">
+				<md-button class="md-raised md-warn pull-right" ng-click="vm.cancelPrivateNote(note)">x</md-button>
+				<label for="vm.post.privateNotes[$index]">
+					Note #{{$index + 1}}
+				</label>
+				<textarea class="private-notes" ng-model="vm.post.privateNotes[$index]"></textarea>
+			</md-input-container>
+		</div>
+		
+		<md-button class="md-raised md-primary" ng-click="vm.submitPost()">Submit</md-button>
+	</form>
+</md-card>
