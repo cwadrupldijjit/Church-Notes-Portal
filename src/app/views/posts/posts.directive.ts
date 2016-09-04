@@ -1,4 +1,4 @@
-/// <reference path="../../js/app" />
+/// <reference path="../../js/app.module.ts" />
 
 (function() {
 	'use strict';
@@ -23,6 +23,12 @@
 	function PostsController(mainService) {
 		var vm = this;
 		
-		vm.posts = mainService.getNotes();
+		vm.posts = [];
+		
+		mainService.getNotes()
+			.then((response) => {
+				console.log('response', response)
+				vm.posts = response;
+			});
 	}
 })();

@@ -1,4 +1,4 @@
-/// <reference path="../../js/app" />
+/// <reference path="../../js/app.module.ts" />
 let vm;
 (function() {
 	'use strict';
@@ -16,9 +16,7 @@ let vm;
 		publicNotes: string[] = [];
 		privateNotes: string[] = [];
 		
-		constructor() {
-			
-		}
+		constructor() {}
 	}
 	
 	angular
@@ -37,9 +35,9 @@ let vm;
 		};
 	}
 	
-	AddPostController.$inject = ['mainService'];
+	AddPostController.$inject = ['$location', 'mainService'];
 	
-	function AddPostController(mainService) {
+	function AddPostController($location, mainService) {
 		vm = this;
 		
 		vm.post = {
@@ -150,8 +148,17 @@ let vm;
 		}
 		
 		function submitPost() {
+			if (!vm.post.title) {
+				return console.log('You must name the post--something unique would be best');
+			}
+			console.log(vm.post);
 			mainService
-				.submitPost(vm.post);
+				.submitPost(vm.post)
+					.then(function newPostSuccess(response) {
+						$location.path('/');
+					}, function newPostError(err) {
+						console.warn(err);
+					});
 		}
 	};
 })();

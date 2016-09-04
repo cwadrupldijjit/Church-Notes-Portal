@@ -1,4 +1,4 @@
-/// <reference path="app" />
+/// <reference path="app.module.ts" />
 
 (function() {
 	'use strict';

@@ -1,89 +1,36 @@
 <div class="view-container">
-	<md-card class="post" ng-repeat="post in mc.posts | orderBy: -post.meta.timestamp">
-		<h3 class="postTitle">{{ post.meta.title }}</h3> was posted {{ post.meta.timestamp }}
+	<md-card class="post" ng-repeat="post in vm.posts | orderBy: -post.timestamp">
+		<h3 class="postTitle">{{ post.title }}</h3> was posted on {{ post.timestamp | date: "MM/dd/yyyy" }} at {{ post.timestamp | date: 'hh:mm:ss a'}}
 		<div class="postContent">
-			<h4 class="postSubHead" ng-if="post.speakers.speakers[0].name">{{ post.speakers.title }}</h4>
-			<div ng-repeat="speaker in post.speakers.speakers">
+			<p>
+				<h4 ng-if="post.announcements[0]">Announcements</h4>
+				<ul ng-if="post.announcements[0]">
+					<li ng-repeat="announcement in post.announcements">
+						{{ announcement }}
+					</li>
+				</ul>
+			</p>
+			
+			<h4 class="postSubHead" ng-if="post.speakers[0]">Speakers</h4>
+			<div ng-repeat="speaker in post.speakers">
 				<h5>{{ speaker.name }}</h5>
 				<p ng-repeat="note in speaker.notes">
 					{{ note }}
 				</p>
 			</div>
 			
-			<h4 class="postSubHead" ng-if="post.otherThoughts.publicNotes[0] || post.otherThoughts.privateNotes[0]">{{ post.otherThoughts.title }}</h4>
-			<p ng-repeat="note in post.otherThoughts.publicNotes">
+			<h4 class="postSubHead" ng-if="post.publicNotes[0]">Public Notes</h4>
+			<p ng-repeat="note in post.publicNotes">
 				{{ note }} 
 			</p>
-			<p ng-repeat="note in post.otherThoughts.privateNotes" class="private">
+			<h4 class="postSubHead private" ng-if="post.privateNotes[0]">Private Notes</h4>
+			<p ng-repeat="note in post.privateNotes" class="private">
 				{{ note }}
 			</p>
-			
-			<p>
-				<h4 ng-if="post.announcements.announcements[0]">{{ post.announcements.title }}</h4>
-				<ul ng-if="post.announcements.announcements[0]">
-					<li ng-repeat="announcement in post.announcements.announcements">
-						{{ announcement }}
-					</li>
-				</ul>
-			</p>
 		</div>
 	</md-card>
 	
-	<md-card class="post">
-		<h3 class="postTitle">Curch Notes 9/6/15</h3> was posted at 9:33am
-		<div class="postContent">
-			<h4 class="postSubHead">Other Thoughts</h4>
-			<p>
-				
-			</p>
-		</div>
-	</md-card>
-	
-	<md-card class="post">
-		<h3 class="postTitle">Curch Notes 8/30/15</h3> was posted at 1:17pm
-		<div class="postContent">
-			<h4 class="postSubHead">Other Thoughts</h4>
-			<p>
-				Repentence refreshes our view of ourselves, of others, and elevates our view to a higher level and helps us to know how God loves us and helps us to love others like God loves us. 
-			</p>
-			<p>
-				Announcements
-				<ul>
-					<li>
-						Institute kickoff is this Wednesday at 6:00pm which will include food and a talk given by Pres Heaton, followed by games
-					</li>
-					<li>
-						FHE this week is at Bro Napp's house in Mapleton at 7:00.  Carpooling is available at the church at 6:30pm.
-					</li>
-				</ul>
-			</p>
-		</div>
-	</md-card>
-
-	<md-card class="post">
-		<h3 class="postTitle">Curch Notes 8/23/15</h3> was posted at 4:20pm
-		<div class="postContent">
-			<h4 class="postSubHead">Other Thoughts</h4>
-			<p>
-				When in a trial, think, "Is Heavenly Father surprized by this trial?"  He knew beforehand what you would be facing, and put you in this place when that happened.  He has confidence in you.
-			</p>
-			<p>
-				Announcements
-				<ul>
-					<li>
-						Institute kickoff is a week from this Wednesday at 6:00pm which will include food and a talk given by Pres Heaton
-					</li>
-					<li>
-						FHE this week is at the church at 7:00, and prepare to get wet
-					</li>
-					<li>
-						FHE next week is at Bro Napp's house in Mapleton at 7:00
-					</li>
-				</ul>
-			</p>
-		</div>
-	</md-card>
-
+	<!--
 	<md-card class="post">
 		<h3 class="postTitle">Curch Notes 8/9/15</h3> was posted at 1:44pm
 		<div class="postContent">
@@ -172,5 +119,5 @@
 
 			</p>
 		</div>
-	</md-card>
+	</md-card>-->
 </div>

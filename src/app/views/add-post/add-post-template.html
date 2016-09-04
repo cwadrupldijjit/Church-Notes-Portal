@@ -1,4 +1,4 @@
-<md-card id="content">
+<md-card id="content" class="md-whiteframe-12dp">
 	<form>
 		<md-input-container>
 			<label for="vm.post.title">
@@ -53,7 +53,7 @@
 			<h3>Public Notes</h3>
 			
 			<md-input-container ng-repeat="note in vm.post.publicNotes track by $index">
-				<md-button class="md-raised md-warn pull-right" ng-click="vm.cancelPublicNote(note)">x</md-button>
+				<md-button class="md-raised md-fab md-mini md-warn pull-right" ng-click="vm.cancelPublicNote(note)">x</md-button>
 				<label for="vm.post.publicNotes[$index]">
 					Note #{{$index + 1}}
 				</label>
@@ -63,14 +63,21 @@
 		
 		<div class="public-notes" ng-if="vm.post.privateNotes.length">
 			<h3>Private Notes</h3>
-			
-			<md-input-container ng-repeat="note in vm.post.privateNotes track by $index">
-				<md-button class="md-raised md-warn pull-right" ng-click="vm.cancelPrivateNote(note)">x</md-button>
-				<label for="vm.post.privateNotes[$index]">
-					Note #{{$index + 1}}
-				</label>
-				<textarea class="private-notes" ng-model="vm.post.privateNotes[$index]"></textarea>
-			</md-input-container>
+	
+			<div layout="row" ng-repeat="note in vm.post.privateNotes track by $index">
+				<md-input-container flex>
+					<label class="private" for="vm.post.privateNotes[$index]">
+						Note {{$index + 1}}
+					</label>
+					<textarea class="private private-notes" ng-model="vm.post.privateNotes[$index]"></textarea>
+				</md-input-container>
+				<md-button 
+					class="md-fab md-mini md-raised md-warn pull-right" 
+					ng-click="vm.cancelPrivateNote(note)"
+				>
+					x
+				</md-button>
+			</div>
 		</div>
 		
 		<md-button class="md-raised md-primary" ng-click="vm.submitPost()">Submit</md-button>
